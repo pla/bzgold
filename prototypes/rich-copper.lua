@@ -192,6 +192,7 @@ data:extend({
     type = "recipe",
     name = "rich-copper",
     localised_name = {"item-name.copper-plate"},
+    factoriopedia_alternative = "copper-plate",
     category = "smelting",
     main_product = "copper-plate",
     order = "d[copper-plate]",
