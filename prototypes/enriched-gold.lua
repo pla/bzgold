@@ -92,7 +92,7 @@ data:extend({
 			{
 				icon = data.raw.item["gold-ore"].icon,
 				icon_size =	data.raw.item["gold-ore"].icon_size,
-				scale = 0.2,
+				scale = 0.2 * 64 / (data.raw.item["gold-ore"].icon_size or 64),
 				shift = {0, 4}
 			}
 		},
