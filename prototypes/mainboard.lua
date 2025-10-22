@@ -1,4 +1,4 @@
-local util = require("data-util");
+local util = require("data-util")
 
 
 if not (mods.bobelectronics or mods.MDbobelectronics or mods.MDbobelectronics2) then
@@ -11,7 +11,7 @@ if not (mods.bobelectronics or mods.MDbobelectronics or mods.MDbobelectronics2) 
       icon_size = 128,
       subgroup = "intermediate-product",
       order = "b[mainboard]",
-      stack_size = 200,
+      stack_size = util.get_stack_size(200),
     },
     {
       type = "recipe",

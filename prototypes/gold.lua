@@ -1,4 +1,4 @@
-local util = require("data-util");
+local util = require("data-util")
 
 data:extend({
   {
@@ -8,7 +8,7 @@ data:extend({
     icon_size = 128,
     subgroup = "raw-resource",
     order = "b[gold-ingot]",
-    stack_size = 100,
+    stack_size = util.get_stack_size(100),
   },
   {
     type = "technology",

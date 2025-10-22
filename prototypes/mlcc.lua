@@ -1,4 +1,4 @@
-local util = require("data-util");
+local util = require("data-util")
 
 if util.me.palladium() then
 
@@ -37,7 +37,7 @@ data:extend({
       },
     subgroup = "intermediate-product",
     order = "b[gold-ingot]",
-    stack_size = 100,
+    stack_size = util.get_stack_size(100),
   },
   {
     type = "recipe",

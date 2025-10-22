@@ -1,4 +1,4 @@
-local util = require("data-util");
+local util = require("data-util")
 
 if util.me.silver() then
   data:extend({
@@ -16,7 +16,7 @@ if util.me.silver() then
       },
       subgroup = "raw-resource",
       order = "a[silver-ore]",
-      stack_size = 200,
+      stack_size = util.get_stack_size(200),
     },
   })
   data:extend({
@@ -27,7 +27,7 @@ if util.me.silver() then
       icon_size = 128,
       subgroup = "raw-resource",
       order = "b[silver-plate]",
-      stack_size = 100,
+      stack_size = util.get_stack_size(100),
     },
     mods.Krastorio2 and {
       type = "recipe",
@@ -58,7 +58,7 @@ if util.me.silver() then
       icon_size = 64, icon_mipmaps = 4,
       subgroup = util.cablesg,
       order = "b[silver-wire]",
-      stack_size = 200,
+      stack_size = util.get_stack_size(200),
     },
     {
       type = "recipe",
@@ -89,7 +89,7 @@ if util.me.silver() then
       icon_size = 128,
       subgroup = "intermediate-product",
       order = "b[silver-brazing-alloy]",
-      stack_size = 100,
+      stack_size = util.get_stack_size(100),
     },
     {
       type = "recipe",

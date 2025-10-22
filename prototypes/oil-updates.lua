@@ -1,5 +1,5 @@
-local futil = require("util");
-local util = require("data-util");
+local futil = require("util")
+local util = require("data-util")
 
 if util.me.catalysis() then
 local recipes_to_update = {
@@ -18,8 +18,9 @@ for i, recipe_name in pairs(recipes_to_update) do
     -- create a copy of the recipe
     local r = futil.table.deepcopy(data.raw.recipe[recipe_name])
     new_name = prefix..r.name
+    -- unify in factoriopedia
+    r.factoriopedia_alternative = r.name
     r.name = new_name
-
     if string.find(new_name, "cracking") then
       r.localised_name = {"", {"recipe-name.catalyzed"}, " ", {"recipe-name."..recipe_name}}
     else

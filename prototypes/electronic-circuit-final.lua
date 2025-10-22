@@ -34,6 +34,7 @@ if util.me.silver() then
     util.set_main_product("electronic-circuit", "electronic-circuit")
     local ec = futil.table.deepcopy(data.raw.recipe["electronic-circuit"])
     ec.name = "electronic-circuit-silver"
+    ec.factoriopedia_alternative = "electronic-circuit"
     ec.localised_name = {"item-name.electronic-circuit"}
     ec.icons = {
       { icon = "__base__/graphics/icons/electronic-circuit.png" },

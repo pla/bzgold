@@ -76,7 +76,7 @@ data:extend({
     },
     subgroup = "raw-resource",
     order = "a-a-a",
-    stack_size = 50,
+    stack_size = util.get_stack_size(50),
     weight = 20 * kg,
     inventory_move_sound = item_sounds.resource_inventory_move,
     pick_sound = item_sounds.resource_inventory_pickup,

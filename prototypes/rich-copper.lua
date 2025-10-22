@@ -172,7 +172,7 @@ if util.me.platinum() or util.me.palladium() then
         },
         subgroup = "raw-resource",
         order = "t-c-a",
-        stack_size = 50,
+        stack_size = util.get_stack_size(50),
       },
     })
 

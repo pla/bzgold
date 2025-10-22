@@ -1,4 +1,4 @@
-local util = require("data-util");
+local util = require("data-util")
 
 if util.me.platinum() then
 data:extend({
@@ -9,7 +9,7 @@ data:extend({
     icon_size = 64,
     subgroup = "raw-resource",
     order = "b[platinum-powder]",
-    stack_size = 100,
+    stack_size = util.get_stack_size(100),
   },
   {
     type = "item",
@@ -18,7 +18,7 @@ data:extend({
     icon_size = 128,
     subgroup = "raw-resource",
     order = "b[platinum-ingot]",
-    stack_size = 100,
+    stack_size = util.get_stack_size(100),
   },
   {
     type = "recipe",

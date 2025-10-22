@@ -1,4 +1,4 @@
-local util = require("data-util");
+local util = require("data-util")
 
 if util.me.catalysis() then
   if util.me.palladium() or util.me.platinum() then
@@ -16,7 +16,7 @@ if util.me.catalysis() then
       },
       subgroup = "intermediate-product",
       order = "b[catalyst]",
-      stack_size = 100,
+      stack_size = util.get_stack_size(100),
     },
     {
       type = "technology",
@@ -64,6 +64,7 @@ if util.me.catalysis() then
       name = "pd-catalyst",
       localised_name = {"item-name.ptpd-catalyst"},
       main_product = "ptpd-catalyst",
+      hidden_in_factoriopedia = true,
       category = "chemistry",
       order = "d[catalyst]",
       enabled = false,
@@ -88,6 +89,7 @@ if util.me.catalysis() then
       name = "pt-catalyst",
       localised_name = {"item-name.ptpd-catalyst"},
       main_product = "ptpd-catalyst",
+      hidden_in_factoriopedia = true,
       category = "chemistry",
       order = "d[catalyst]",
       enabled = false,

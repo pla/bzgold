@@ -1,4 +1,4 @@
-local util = require("data-util");
+local util = require("data-util")
 
 local silicon = {type="item", name="stone", amount=30}
 if mods.bzsilicon then
@@ -18,7 +18,7 @@ data:extend({
     icon_size = 256,
     subgroup = "intermediate-product",
     order = "b[cpu]",
-    stack_size = 200,
+    stack_size = util.get_stack_size(200),
   },
   {
     type = "recipe",

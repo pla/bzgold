@@ -1,4 +1,4 @@
-local util = require("data-util");
+local util = require("data-util")
 
 if util.se6() and util.me.silver() then
   data:extend({
@@ -7,7 +7,7 @@ if util.se6() and util.me.silver() then
     name = "silver-ingot",
     icons = {{icon = "__bzgold__/graphics/icons/silver-ingot.png", icon_size = 128}},
     order = "b-b",
-    stack_size = 50,
+    stack_size = util.get_stack_size(50),
     subgroup = "silver",
   },
   {
