@@ -30,11 +30,11 @@ data:extend({
       mining_particle = "gold-ore-particle",
       mining_time = 1,
       results = util.se6() and {
-        { type = "item", name = "gold-ore", amount = 1, probability = 0.75 },
-        { type = "item", name = "stone", amount = 1, probability = 0.25 },
+        { type = "item", name = "gold-ore", amount = 1, independent_probability = 0.75 },
+        { type = "item", name = "stone", amount = 1, independent_probability = 0.25 },
       } or {
-        { type = "item", name = "gold-ore", amount = 1, probability = 0.25 },
-        { type = "item", name = "stone", amount = 1, probability = 0.75 },
+        { type = "item", name = "gold-ore", amount = 1, independent_probability = 0.25 },
+        { type = "item", name = "stone", amount = 1, independent_probability = 0.75 },
       },
     },
     collision_box = { { -0.1, -0.1 }, { 0.1, 0.1 } },

@@ -29,7 +29,7 @@ data:extend({
   {
     type = "recipe",
     name = "temperature-sensor",
-    category = "crafting",
+    categories = {"crafting"},
     order = "d[temperature-sensor]",
     enabled = false,
     energy_required = 4,

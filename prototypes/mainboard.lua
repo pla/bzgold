@@ -16,7 +16,7 @@ if not (mods.bobelectronics or mods.MDbobelectronics or mods.MDbobelectronics2) 
     {
       type = "recipe",
       name = "mainboard",
-      category = "crafting",
+      categories = {"crafting"},
       order = "d[mainboard]",
       enabled = false,
       energy_required = 2.5,
@@ -34,7 +34,7 @@ if not (mods.bobelectronics or mods.MDbobelectronics or mods.MDbobelectronics2) 
           { icon = "__bzgold__/graphics/icons/mainboard.png", icon_size = 128 },
           { icon = "__space-exploration-graphics__/graphics/icons/holmium-solenoid.png", icon_size = 64, scale=.25, shift={-8, -8} },
         },
-        category = "crafting-with-fluid",
+        categories = {"crafting-with-fluid"},
         order = "d[mainboard]",
         enabled = false,
         energy_required = 5,

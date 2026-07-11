@@ -1,4 +1,4 @@
-local util = require("data-util");
+local util = require("data-util")
 
 
 if util.me.alchemy() then
@@ -7,7 +7,7 @@ if util.me.alchemy() then
       type = "recipe",
       name = "alchemy",
       main_product = "gold-ingot",
-      category = "smelting",
+      categories = {"smelting"},
       order = "d[gold-ingot]2",
       enabled = false,
       energy_required = 16,

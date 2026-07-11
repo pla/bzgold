@@ -26,7 +26,7 @@ if util.se6() and util.me.silver() then
   },
   {
     type = "recipe",
-    category = "smelting",
+    categories = {"smelting"},
     name = "molten-silver",
     main_product = "molten-silver",
     subgroup = "silver",
@@ -46,7 +46,7 @@ if util.se6() and util.me.silver() then
   {
     type = "recipe",
     name = "silver-ingot",
-    category = "casting",
+    categories = {"casting"},
     results = {{type="item", name="silver-ingot", amount=1}},
     energy_required = 25,
     ingredients = {
@@ -58,7 +58,7 @@ if util.se6() and util.me.silver() then
   },
   {
     type = "recipe",
-    category = "crafting",
+    categories = {"crafting"},
     name = "silver-ingot-to-plate",
 
     icons = {

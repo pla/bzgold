@@ -32,7 +32,7 @@ if util.me.silver() then
     mods.Krastorio2 and {
       type = "recipe",
       name = "silver-plate",
-      category = "smelting",
+      categories = {"smelting"},
       order = "d[silver-plate]",
       enabled = false,
       energy_required = 8,
@@ -41,7 +41,7 @@ if util.me.silver() then
     } or {
       type = "recipe",
       name = "silver-plate",
-      category = "smelting",
+      categories = {"smelting"},
       order = "d[silver-plate]",
       enabled = false,
       energy_required = 1.6,
@@ -55,7 +55,8 @@ if util.me.silver() then
       type = "item",
       name = "silver-wire",
       icon = "__bzgold__/graphics/icons/silver-wire.png",
-      icon_size = 64, icon_mipmaps = 4,
+      icon_size = 64,
+      icon_mipmaps = 4,
       subgroup = util.cablesg,
       order = "b[silver-wire]",
       stack_size = util.get_stack_size(200),
@@ -63,24 +64,26 @@ if util.me.silver() then
     {
       type = "recipe",
       name = "silver-wire",
-      category = "crafting",
+      categories = { "crafting" },
       order = "d[silver-wire]",
       enabled = false,
       energy_required = 1,
-      ingredients = {{type="item", name="silver-plate", amount=1}},
-      results = {{type="item", name="silver-wire", amount=3}},
+      ingredients = { { type = "item", name = "silver-plate", amount = 1 } },
+      results = { { type = "item", name = "silver-wire", amount = 3 } },
     },
   })
 
-  brazing = mods["BrassTacks-Updated"] and {
-    {type="item", name="silver-plate", amount=2},
-    {type="item", name="zinc-plate", amount=1},
-    {type="item", name="copper-plate", amount=1}
-  } or {
-    {type="item", name="silver-plate", amount=2},
-    {type="item", name="copper-plate", amount=2}
-  }
-  
+  brazing = mods["BrassTacks-Updated"]
+      and {
+        { type = "item", name = "silver-plate", amount = 2 },
+        { type = "item", name = "zinc-plate", amount = 1 },
+        { type = "item", name = "copper-plate", amount = 1 },
+      }
+    or {
+      { type = "item", name = "silver-plate", amount = 2 },
+      { type = "item", name = "copper-plate", amount = 2 },
+    }
+
   data:extend({
     {
       type = "item",
@@ -94,12 +97,12 @@ if util.me.silver() then
     {
       type = "recipe",
       name = "silver-brazing-alloy",
-      category = "crafting",
+      categories = { "crafting" },
       order = "d[silver-brazing-alloy]",
       enabled = false,
       energy_required = 4,
       ingredients = brazing,
-      results = {{type="item", name="silver-brazing-alloy", amount=4}},
+      results = { { type = "item", name = "silver-brazing-alloy", amount = 4 } },
     },
   })
 
@@ -108,7 +111,7 @@ if util.me.silver() then
     util.set_subgroup("silver-brazing-alloy", "foundry-intermediate")
   end
 
-  local prereqs= mods.bzaluminum and {"copper-processing"} or {"automation"}
+  local prereqs = mods.bzaluminum and { "copper-processing" } or { "automation" }
   data:extend({
     {
       type = "technology",
@@ -125,9 +128,9 @@ if util.me.silver() then
         { type = "unlock-recipe", recipe = "silver-brazing-alloy" },
       },
       unit = {
-        count = 10, time = 15,
-        ingredients = mods.Krastorio2 and { {"kr-basic-tech-card", 1}, }
-        or { {"automation-science-pack", 1}, },
+        count = 10,
+        time = 15,
+        ingredients = mods.Krastorio2 and { { "kr-basic-tech-card", 1 } } or { { "automation-science-pack", 1 } },
       },
       prerequisites = prereqs,
       order = "b-b",
@@ -142,7 +145,10 @@ if util.me.silver() then
 
     -- small silver byproduct on copper, even if lead is enabled
     if not mods.Krastorio2 and util.me.byproduct() then
-      util.add_product("copper-plate", {type="item", name="silver-ore", amount=1, probability=0.1})
+      util.add_product(
+        "copper-plate",
+        { type = "item", name = "silver-ore", amount = 1, independent_probability = 0.1 }
+      )
     end
   else
     if not mods.Krastorio2 then

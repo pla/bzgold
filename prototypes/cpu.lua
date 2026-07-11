@@ -23,7 +23,7 @@ data:extend({
   {
     type = "recipe",
     name = "cpu",
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     order = "d[cpu]",
     enabled = false,
     energy_required = 50,
@@ -37,11 +37,23 @@ data:extend({
 if mods["space-exploration"] then
   local cpui = {}
   if mods.Krastorio2 then
-    cpui = {{type="item", name="se-holmium-cable", amount=2}, silicon, spreader, {type="item", name="electronic-circuit", amount=20}, {type="item", name="gold-ingot", amount=1},
-            {type="fluid", name="sulfuric-acid", amount=50}}
+    cpui = {
+      { type = "item", name = "se-holmium-cable", amount = 2 },
+      silicon,
+      spreader,
+      { type = "item", name = "electronic-circuit", amount = 20 },
+      { type = "item", name = "gold-ingot", amount = 1 },
+      { type = "fluid", name = "sulfuric-acid", amount = 50 },
+    }
   else
-    cpui = {{type="item", name="se-holmium-cable", amount=1}, silicon, spreader, {type="item", name="electronic-circuit", amount=20}, {type="item", name="gold-ingot", amount=1},
-            {type="fluid", name="sulfuric-acid", amount=50}}
+    cpui = {
+      { type = "item", name = "se-holmium-cable", amount = 1 },
+      silicon,
+      spreader,
+      { type = "item", name = "electronic-circuit", amount = 20 },
+      { type = "item", name = "gold-ingot", amount = 1 },
+      { type = "fluid", name = "sulfuric-acid", amount = 50 },
+    }
   end
   data:extend({
     {
@@ -51,7 +63,7 @@ if mods["space-exploration"] then
         { icon = "__base__/graphics/technology/advanced-circuit.png", icon_size = 256, },
         { icon = "__space-exploration-graphics__/graphics/icons/holmium-solenoid.png", icon_size = 64, scale=.25, shift={-8, -8} },
       },
-      category = "crafting-with-fluid",
+      categories = {"crafting-with-fluid"},
       order = "d[cpu]",
       enabled = false,
       energy_required = 50,

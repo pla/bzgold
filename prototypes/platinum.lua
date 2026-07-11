@@ -24,15 +24,15 @@ data:extend({
     type = "recipe",
     name = "platinum-ingot",
     main_product = "platinum-ingot",
-    category = "smelting",
+    categories = {"smelting"},
     order = "d[platinum-ingot]",
     enabled = false,
     energy_required = 1.6,
     ingredients = {{type="item", name="platinum-powder", amount=1}},
     results = util.me.byproduct() and 
     {
-      {type="item", name="platinum-ingot", amount=1, probability=0.95},
-      {type="item", name="sulfur", amount=1, probability=0.05},
+      {type="item", name="platinum-ingot", amount=1, independent_probability=0.95},
+      {type="item", name="sulfur", amount=1, independent_probability=0.05},
     } or {{type="item", name="platinum-ingot", amount=1}},
   },
 })

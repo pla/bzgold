@@ -42,7 +42,7 @@ data:extend({
   {
     type = "recipe",
     name = "mlcc",
-    category = "crafting",
+    categories = {"crafting"},
     order = "d[mlcc]",
     enabled = false,
     energy_required = 4,

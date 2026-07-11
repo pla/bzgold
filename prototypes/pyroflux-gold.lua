@@ -1,4 +1,4 @@
-local util = require("data-util");
+local util = require("data-util")
 
 
 if util.se6() then
@@ -19,7 +19,7 @@ if util.se6() then
   },
   {
     type = "recipe",
-    category = "smelting",
+    categories = {"smelting"},
     name = "molten-gold",
     main_product = "molten-gold",
     subgroup = "gold",
@@ -39,7 +39,7 @@ if util.se6() then
   {
     type = "recipe",
     name = "gold-ingot-casting",
-    category = "casting",
+    categories = {"casting"},
     results = {{type="item", name="gold-ingot", amount=1}},
     energy_required = 2.5,
     ingredients = {

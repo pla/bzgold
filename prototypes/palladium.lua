@@ -24,49 +24,49 @@ data:extend({
     type = "recipe",
     name = "palladium-ingot",
     main_product = "palladium-ingot",
-    category = "smelting",
+    categories = {"smelting"},
     order = "d[palladium-ingot]",
     enabled = false,
     energy_required = 1.6,
     ingredients = {{type="item", name="palladium-powder", amount=1}},
     results = util.me.byproduct() and
     {
-      {type="item", name="palladium-ingot", amount=1, probability=0.95},
-      {type="item", name="sulfur", amount=1, probability=0.05},
+      {type="item", name="palladium-ingot", amount=1, independent_probability=0.95},
+      {type="item", name="sulfur", amount=1, independent_probability=0.05},
     } or  {{type="item", name="palladium-ingot", amount=1}},
   },
 })
-data:extend({
-  {
-    type = "technology",
-    name = "palladium-processing",
-    icons = {
-      {
-        icon = "__bzgold__/graphics/technology/palladium-processing.png",
-        icon_size = 256,
+  data:extend({
+    {
+      type = "technology",
+      name = "palladium-processing",
+      icons = {
+        {
+          icon = "__bzgold__/graphics/technology/palladium-processing.png",
+          icon_size = 256,
+        },
       },
-    },
-    effects = {
-      { type = "unlock-recipe", recipe = "palladium-ingot" },
-    },
-    unit = {
-      count = 50, time = 30,
-      ingredients = util.se6() and 
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
-        {"se-rocket-science-pack", 1},
-      } or {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
+      effects = {
+        { type = "unlock-recipe", recipe = "palladium-ingot" },
       },
+      unit = {
+        count = 50,
+        time = 30,
+        ingredients = util.se6() and {
+          { "automation-science-pack", 1 },
+          { "logistic-science-pack", 1 },
+          { "chemical-science-pack", 1 },
+          { "se-rocket-science-pack", 1 },
+        } or {
+          { "automation-science-pack", 1 },
+          { "logistic-science-pack", 1 },
+          { "chemical-science-pack", 1 },
+        },
+      },
+      prerequisites = mods["space-exploration"] and { "se-rocket-science-pack" } or { "chemical-science-pack" },
+      order = "b-b",
     },
-    prerequisites = mods["space-exploration"] and {"se-rocket-science-pack"} or {"chemical-science-pack"},
-    order = "b-b",
-  },
-})
+  })
 if mods.bztitanium then
 data:extend({
   {
@@ -81,7 +81,7 @@ data:extend({
   {
     type = "recipe",
     name = "titanium-palladium-flange",
-    category = "advanced-crafting",
+    categories = {"advanced-crafting"},
     order = "d[palladium-ingot]",
     enabled = false,
     energy_required = 5,

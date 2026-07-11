@@ -1,4 +1,4 @@
-local futil = require("util");
+local futil = require("util")
 local util = require("data-util")
 
 if util.se6() then
@@ -15,19 +15,17 @@ if util.se6() then
   util.remove_prerequisite("se-meteor-defence", "processing-unit")
   util.add_prerequisite("se-meteor-defence", "se-rocket-science-pack")
   util.set_tech_recipe("se-meteor-defence", {
-    {"automation-science-pack", 1},
-    {"logistic-science-pack", 1},
-    {"chemical-science-pack", 1},
-    {"se-rocket-science-pack", 1},
+    { "automation-science-pack", 1 },
+    { "logistic-science-pack", 1 },
+    { "chemical-science-pack", 1 },
+    { "se-rocket-science-pack", 1 },
   })
   util.set_tech_recipe("se-energy-beam-defence", {
-    {"automation-science-pack", 1},
-    {"logistic-science-pack", 1},
-    {"chemical-science-pack", 1},
-    {"se-rocket-science-pack", 1},
+    { "automation-science-pack", 1 },
+    { "logistic-science-pack", 1 },
+    { "chemical-science-pack", 1 },
+    { "se-rocket-science-pack", 1 },
   })
-
-
 
   if util.me.silver() then
     util.replace_ingredient("se-nutrient-vat", "iron-plate", "silver-plate")
@@ -65,7 +63,6 @@ if util.se6() then
     util.add_ingredient("se-space-decontamination-facility", "silver-plate", 5)
   end
 
-
   util.multiply_recipe("se-bioscrubber", 10)
   if util.me.palladium() then
     util.replace_some_ingredient("se-bioscrubber", "steel-plate", 10, "palladium-ingot", 2)
@@ -77,16 +74,28 @@ if util.se6() then
 
   if util.me.platinum() then
     util.add_ingredient("se-bioelectrics-data", "platinum-ingot", 1)
-    util.add_product("se-bioelectrics-data", {type="item", name="platinum-ingot", amount=1, probability=.9})
+    util.add_product(
+      "se-bioelectrics-data",
+      { type = "item", name = "platinum-ingot", amount = 1, independent_probability = 0.9 }
+    )
   elseif util.me.palladium() then
     util.add_ingredient("se-bioelectrics-data", "palladium-ingot", 1)
-    util.add_product("se-bioelectrics-data", {type="item", name="palladium-ingot", amount=1, probability=.9})
+    util.add_product(
+      "se-bioelectrics-data",
+      { type = "item", name = "palladium-ingot", amount = 1, independent_probability = 0.9 }
+    )
   elseif util.me.silver() then
     util.add_ingredient("se-bioelectrics-data", "silver-plate", 1)
-    util.add_product("se-bioelectrics-data", {type="item", name="silver-plate", amount=1, probability=.8})
+    util.add_product(
+      "se-bioelectrics-data",
+      { type = "item", name = "silver-plate", amount = 1, independent_probability = 0.8 }
+    )
   else
     util.add_ingredient("se-bioelectrics-data", "gold-ingot", 1)
-    util.add_product("se-bioelectrics-data", {type="item", name="gold-ingot", amount=1, probability=.8})
+    util.add_product(
+      "se-bioelectrics-data",
+      { type = "item", name = "gold-ingot", amount = 1, independent_probability = 0.8 }
+    )
   end
 
 

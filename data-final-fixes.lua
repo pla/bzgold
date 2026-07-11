@@ -6,14 +6,14 @@ require("compatibility/248k-final")
 -- require("tin-recipe-final-5d")
 -- require("tin-recipe-final-rrr")
 
-local util = require("data-util");
+local util = require("__bzgold__.data-util")
 
 if mods["space-exploration"] then 
   util.remove_product("se-core-fragment-omni", "gold-ore")
   util.remove_product("se-core-fragment-omni", "rich-copper-ore")
   if util.me.core_mining() > 0.0 then
-    util.add_product("se-core-fragment-omni", {type="item", name="gold-ore", amount=1, probability = util.me.core_mining()})
-    util.add_product("se-core-fragment-omni", {type="item", name="rich-copper-ore", amount=2, probability = util.me.core_mining()})
+    util.add_product("se-core-fragment-omni", {type="item", name="gold-ore", amount=1, independent_probability = util.me.core_mining()})
+    util.add_product("se-core-fragment-omni", {type="item", name="rich-copper-ore", amount=2, independent_probability = util.me.core_mining()})
   end
 
 

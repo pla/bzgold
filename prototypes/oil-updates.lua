@@ -33,7 +33,7 @@ for i, recipe_name in pairs(recipes_to_update) do
     data:extend({r})
     util.add_ingredient(new_name, "ptpd-catalyst", 1, {force=true})
     util.add_product(new_name, {type="item", name="ptpd-catalyst", amount=1,
-                                ignored_by_productivity=1, probability=.9}, {force=true})
+                                ignored_by_productivity=1, independent_probability=.9}, {force=true})
     util.add_icon(new_name, {icon="__bzgold__/graphics/icons/ptpd-catalyst.png",
                              icon_size=128, scale=0.124, shift={8,-8}})
 

@@ -42,37 +42,37 @@ if util.me.platinum() or util.me.palladium() then
     if util.me.silver() and util.me.platinum() and util.me.palladium() then
       results = {
         { type = "item", name = "copper-plate", amount = 1 },
-        { type = "item", name = "silver-ore", amount = 1, probability = 0.5 },
-        { type = "item", name = "platinum-powder", amount = 1, probability = 0.25 },
-        { type = "item", name = "palladium-powder", amount = 1, probability = 0.25 },
+        { type = "item", name = "silver-ore", amount = 1, independent_probability = 0.5 },
+        { type = "item", name = "platinum-powder", amount = 1, independent_probability = 0.25 },
+        { type = "item", name = "palladium-powder", amount = 1, independent_probability = 0.25 },
       }
     elseif util.me.silver() and util.me.platinum() then
       results = {
         { type = "item", name = "copper-plate", amount = 1 },
-        { type = "item", name = "silver-ore", amount = 1, probability = 0.67 },
-        { type = "item", name = "platinum-powder", amount = 1, probability = 0.33 },
+        { type = "item", name = "silver-ore", amount = 1, independent_probability = 0.67 },
+        { type = "item", name = "platinum-powder", amount = 1, independent_probability = 0.33 },
       }
     elseif util.me.silver() and util.me.palladium() then
       results = {
         { type = "item", name = "copper-plate", amount = 1 },
         { type = "item", name = "silver-ore", amount = 1, probability = 0.67 },
-        { type = "item", name = "palladium-powder", amount = 1, probability = 0.33 },
+        { type = "item", name = "palladium-powder", amount = 1, independent_probability = 0.33 },
       }
     elseif util.me.platinum() and util.me.palladium() then
       results = {
         { type = "item", name = "copper-plate", amount = 1 },
-        { type = "item", name = "platinum-powder", amount = 1, probability = 0.5 },
-        { type = "item", name = "palladium-powder", amount = 1, probability = 0.5 },
+        { type = "item", name = "platinum-powder", amount = 1, independent_probability = 0.5 },
+        { type = "item", name = "palladium-powder", amount = 1, independent_probability = 0.5 },
       }
     elseif util.me.platinum() then
       results = {
-        { type = "item", name = "copper-plate", amount = 2, probability = 0.75 },
-        { type = "item", name = "platinum-powder", amount = 1, probability = 0.5 },
+        { type = "item", name = "copper-plate", amount = 2, independent_probability = 0.75 },
+        { type = "item", name = "platinum-powder", amount = 1, independent_probability = 0.5 },
       }
     elseif util.me.palladium() then
       results = {
-        { type = "item", name = "copper-plate", amount = 2, probability = 0.75 },
-        { type = "item", name = "palladium-powder", amount = 1, probability = 0.5 },
+        { type = "item", name = "copper-plate", amount = 2, independent_probability = 0.75 },
+        { type = "item", name = "palladium-powder", amount = 1, independent_probability = 0.5 },
       }
     else -- should never happen
       results = {
@@ -104,7 +104,7 @@ if util.me.platinum() or util.me.palladium() then
       data:extend({
         {
           type = "autoplace-control",
-          category = "resource",
+          categories = { "resource" },
           name = "rich-copper-ore",
           richness = true,
           order = "zzzzzzzzzzz",
@@ -182,7 +182,7 @@ if util.me.platinum() or util.me.palladium() then
         name = "rich-copper",
         localised_name = { "item-name.copper-plate" },
         factoriopedia_alternative = "copper-plate",
-        category = "smelting",
+        categories = {"smelting"},
         main_product = "copper-plate",
         order = "d[copper-plate]",
         enabled = false,

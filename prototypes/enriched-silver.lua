@@ -23,27 +23,27 @@ local enrich_results = {}
 if util.me.platinum() and util.me.palladium() then
   enrich_results = {
       {type = "item",  name = "enriched-silver", amount = 5},
-      {type = "item",  name = "platinum-powder", amount = 1, probability=0.5},
-      {type = "item",  name = "palladium-powder", amount = 1, probability=0.5},
+      {type = "item",  name = "platinum-powder", amount = 1, independent_probability=0.5},
+      {type = "item",  name = "palladium-powder", amount = 1, independent_probability=0.5},
       {type = "fluid", name = "kr-dirty-water", amount = 25, ignored_by_productivity = 25}
   }
 elseif util.me.platinum() then
-  enrich_results = {
-      {type = "item",  name = "enriched-silver", amount = 5},
-      {type = "item",  name = "platinum-powder", amount = 1},
-      {type = "fluid", name = "kr-dirty-water", amount = 25, ignored_by_productivity = 25}
-  }
+    enrich_results = {
+      { type = "item", name = "enriched-silver", amount = 5 },
+      { type = "item", name = "platinum-powder", amount = 1 },
+      { type = "fluid", name = "kr-dirty-water", amount = 25, ignored_by_productivity = 25 },
+    }
 elseif util.me.palladium() then
-  enrich_results = {
-      {type = "item",  name = "enriched-silver", amount = 5},
-      {type = "item",  name = "palladium-powder", amount = 1},
-      {type = "fluid", name = "kr-dirty-water", amount = 25, ignored_by_productivity = 25}
-  }
+    enrich_results = {
+      { type = "item", name = "enriched-silver", amount = 5 },
+      { type = "item", name = "palladium-powder", amount = 1 },
+      { type = "fluid", name = "kr-dirty-water", amount = 25, ignored_by_productivity = 25 },
+    }
 else
-  enrich_results = {
-      {type = "item",  name = "enriched-silver", amount = 6},
-      {type = "fluid", name = "kr-dirty-water", amount = 25, ignored_by_productivity = 25}
-  }
+    enrich_results = {
+      { type = "item", name = "enriched-silver", amount = 6 },
+      { type = "fluid", name = "kr-dirty-water", amount = 25, ignored_by_productivity = 25 },
+    }
 end
 
 data:extend({
@@ -53,7 +53,7 @@ data:extend({
     main_product = "enriched-silver",
     icon = "__bzgold__/graphics/icons/enriched-silver.png",
     icon_size = 128,
-    category = "chemistry",
+    categories = {"chemistry"},
     energy_required = 3,
     enabled = false,
     always_show_made_in = true,
@@ -85,7 +85,7 @@ data:extend({
         { icon = "__bzgold__/graphics/icons/silver-plate.png", icon_size = 128, icon_mipmaps = 3, },
         { icon = "__bzgold__/graphics/icons/enriched-silver.png", icon_size = 128, scale=0.125, shift= {-8, -8}},
       },
-      category = "smelting",
+      categories = {"smelting"},
       energy_required = 8,
       enabled = false,
       always_show_made_in = true,
@@ -101,7 +101,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "dirty-water-filtration-silver",
-		category = "kr-fluid-filtration",
+		categories = {"kr-fluid-filtration"},
 		icons =
 		{
 			{
@@ -128,8 +128,8 @@ data:extend({
 		results =
 		{
 			{type = "fluid", name = "water", amount = 90, ignored_by_productivity = 90},
-			{type = "item",  name = "stone", probability = 0.30, amount = 1},
-			{type = "item",  name = "silver-ore", probability = 0.05, amount = 1}
+			{type = "item",  name = "stone", independent_probability = 0.30, amount = 1},
+			{type = "item",  name = "silver-ore", independent_probability = 0.05, amount = 1}
 		},
 		crafting_machine_tint =
 		{

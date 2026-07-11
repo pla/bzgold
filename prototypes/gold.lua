@@ -54,7 +54,7 @@ if mods.Krastorio2 then
       type = "recipe",
       name = "gold-ingot",
       main_product = "gold-ingot",
-      category = "smelting",
+      categories = {"smelting"},
       order = "d[gold-ingot]",
       enabled = false,
       energy_required = 8,
@@ -63,11 +63,11 @@ if mods.Krastorio2 then
     },
   })
 else
-  local results = {{type="item", name="gold-ingot", amount=1}}
+  local results = { { type = "item", name = "gold-ingot", amount = 1 } }
   if util.me.silver() and util.me.byproduct() then
     results = {
-      {type = "item", name="gold-ingot", amount=1, probability=.9},
-      {type = "item", name="silver-ore", amount=1, probability=.2},
+      { type = "item", name = "gold-ingot", amount = 1, independent_probability = 0.9 },
+      { type = "item", name = "silver-ore", amount = 1, independent_probability = 0.2 },
     }
   end
 
@@ -76,7 +76,7 @@ else
       type = "recipe",
       name = "gold-ingot",
       main_product = "gold-ingot",
-      category = "smelting",
+      categories = {"smelting"},
       order = "d[gold-ingot]",
       enabled = false,
       energy_required = 1.6,
