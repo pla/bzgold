@@ -18,7 +18,7 @@ data:extend({
 		type = "bool-setting",
 		name = "bzgold-byproduct",
 		setting_type = "startup",
-    default_value = true,
+    default_value = false,
     order = "a3",
 	},
   {
@@ -39,14 +39,14 @@ data:extend({
     type = "bool-setting",
     name = "bzgold-silver",
 		setting_type = "startup",
-    default_value = true,
+    default_value = false,
     order = "c3",
   },
   {
     type = "bool-setting",
     name = "bzgold-catalysis",
 		setting_type = "startup",
-    default_value = true,
+    default_value = false,
     order = "d",
   },
 })
